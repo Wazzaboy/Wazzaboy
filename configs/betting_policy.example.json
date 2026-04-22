@@ -1,0 +1,8 @@
+{
+  "market_weight": 0.55,
+  "overlay_threshold": 0.03,
+  "max_bets_per_race": 2,
+  "min_odds": 2.0,
+  "max_odds": 30.0,
+  "notes": "Baseline policy only. Must be validated by walk-forward backtests."
+}

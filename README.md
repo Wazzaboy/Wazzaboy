@@ -1,28 +1,37 @@
 # HKJC Quant Modeling Factory (Codex-Operated)
 
-This repository defines a **no-hallucination, market-blended probabilistic modeling system** for HKJC race analysis.
+This repository now includes an executable **deterministic market-blended live board scorer** scaffold.
 
 ## Mission
 Build a production-grade pipeline where:
 - official HKJC data is the source of truth,
 - calibrated statistical/ML models produce probabilities,
 - market odds are blended into final estimates,
-- wagering decisions are generated only when overlays pass strict gates.
+- wagers fire only when overlay thresholds are satisfied.
 
-Codex is used as an engineering/research operator for ingestion, testing, feature generation, model evaluation, and auditability.
+## What is implemented now
+- Data contracts for race packets and runner inputs.
+- Deterministic probability normalization and market implied-probability conversion.
+- Convex market+model probability blending.
+- Live-board scorer producing fair odds, expected value, and overlay flags.
+- Unit tests for probability math and live-board execution.
 
-## Core Principles
-1. **Data integrity first** (never invent data).
-2. **Probabilities, not picks**.
-3. **Calibration beats storytelling**.
-4. **Market blend required**.
-5. **Pass often; bet only overlays**.
-6. **Every change must be testable and reviewable**.
+## Repository pointers
+- [`src/hkjc_factory/contracts.py`](src/hkjc_factory/contracts.py): input validation contracts.
+- [`src/hkjc_factory/probability.py`](src/hkjc_factory/probability.py): probability, blend, and overlay logic.
+- [`src/hkjc_factory/live_board.py`](src/hkjc_factory/live_board.py): CLI entry point for race packet scoring.
+- [`configs/sample_race_packet.json`](configs/sample_race_packet.json): sample deterministic input.
+- [`configs/betting_policy.example.json`](configs/betting_policy.example.json): example policy parameters.
 
-## Start Here
-- [`HKJC_Codex_OS.md`](HKJC_Codex_OS.md): full operating blueprint.
-- [`AGENTS.md`](AGENTS.md): role instructions and non-negotiable quality gates.
-- [`TASKS.md`](TASKS.md): staged implementation plan.
+## Quickstart
+```bash
+python -m unittest discover -s tests -v
+PYTHONPATH=src python -m hkjc_factory.live_board configs/sample_race_packet.json --market-weight 0.55 --overlay-threshold 0.03
+```
 
-## Status
-This is the initial system design baseline. Implementation should proceed in staged milestones with regression-safe increments.
+## Core principles
+1. Never invent race data.
+2. Missing values stay missing.
+3. Probabilities are optimized before ROI.
+4. Market blend is mandatory.
+5. Every change must be reproducible and test-covered.

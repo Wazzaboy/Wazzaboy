@@ -1,0 +1,12 @@
+{
+  "meeting_id": "ST-2026-04-22",
+  "race_id": "R5",
+  "source_timestamp_utc": "2026-04-22T08:45:00Z",
+  "runners": [
+    {"runner_id": "1", "horse_id": "H001", "model_probability": 0.28, "current_win_odds": 4.2},
+    {"runner_id": "2", "horse_id": "H002", "model_probability": 0.17, "current_win_odds": 6.8},
+    {"runner_id": "3", "horse_id": "H003", "model_probability": 0.11, "current_win_odds": 11.0},
+    {"runner_id": "4", "horse_id": "H004", "model_probability": 0.21, "current_win_odds": 5.4},
+    {"runner_id": "5", "horse_id": "H005", "model_probability": 0.23, "current_win_odds": 4.9}
+  ]
+}
