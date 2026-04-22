@@ -29,8 +29,8 @@
 ## Milestone 4 — Backtest and decision policy
 - [x] Build walk-forward backtest harness.
 - [x] Report all mandatory metrics and segment breakdowns.
-- [ ] Implement overlay thresholding and pass rules.
-- [ ] Simulate stake sizing and risk controls.
+- [x] Implement overlay thresholding and pass rules.
+- [x] Simulate stake sizing and risk controls.
 
 ## Milestone 5 — Live race-day engine
 - [ ] Build race packet generation service.
