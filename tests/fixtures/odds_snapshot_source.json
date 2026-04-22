@@ -1,0 +1,9 @@
+{
+  "race_id": "RACE-abc123",
+  "source_url": "https://example.invalid/hkjc/odds",
+  "source_timestamp_utc": "2026-04-22T08:42:00Z",
+  "odds": [
+    {"runner_id": "RUN-1", "current_win_odds": 4.4},
+    {"runner_id": "RUN-2", "current_win_odds": 6.5}
+  ]
+}

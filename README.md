@@ -16,17 +16,24 @@ Build a production-grade pipeline where:
 - Live-board scorer producing fair odds, expected value, and overlay flags.
 - Unit tests for probability math and live-board execution.
 
+- Ingestion parser utilities for source payloads -> canonical packet transformation.
+- Deterministic race/runner ID mapping helpers.
+- Ingestion quality checks (completeness + snapshot freshness).
+
 ## Repository pointers
 - [`src/hkjc_factory/contracts.py`](src/hkjc_factory/contracts.py): input validation contracts.
 - [`src/hkjc_factory/probability.py`](src/hkjc_factory/probability.py): probability, blend, and overlay logic.
 - [`src/hkjc_factory/live_board.py`](src/hkjc_factory/live_board.py): CLI entry point for race packet scoring.
+- [`src/hkjc_factory/ingestion/parsers.py`](src/hkjc_factory/ingestion/parsers.py): deterministic source parsers.
+- [`src/hkjc_factory/ingestion/quality.py`](src/hkjc_factory/ingestion/quality.py): freshness and completeness checks.
 - [`configs/sample_race_packet.json`](configs/sample_race_packet.json): sample deterministic input.
 - [`configs/betting_policy.example.json`](configs/betting_policy.example.json): example policy parameters.
 
 ## Quickstart
 ```bash
 python -m unittest discover -s tests -v
-PYTHONPATH=src python -m hkjc_factory.live_board configs/sample_race_packet.json --market-weight 0.55 --overlay-threshold 0.03
+PYTHONPATH=src python -m hkjc_factory.ingestion_cli tests/fixtures/race_card_source.json configs/sample_race_packet.generated.json
+PYTHONPATH=src python -m hkjc_factory.live_board configs/sample_race_packet.generated.json --market-weight 0.55 --overlay-threshold 0.03
 ```
 
 ## Core principles

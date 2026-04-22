@@ -1,16 +1,16 @@
 # HKJC Quant Factory Implementation Tasks
 
 ## Milestone 0 — Foundation
-- [ ] Create directory skeleton and package structure.
-- [ ] Add schema contract files for core entities.
+- [x] Create directory skeleton and package structure.
+- [x] Add schema contract files for core entities.
 - [ ] Add CI checks for formatting, tests, and schema validation.
 
 ## Milestone 1 — Deterministic ingestion
 - [ ] Implement race card parser with fixtures.
 - [ ] Implement odds snapshot collector with scheduling.
 - [ ] Implement results/dividends parser.
-- [ ] Implement ID mapping service for meeting/race/horse/runner.
-- [ ] Add freshness and completeness monitors.
+- [x] Implement ID mapping service for meeting/race/horse/runner.
+- [x] Add freshness and completeness monitors.
 
 ## Milestone 2 — Feature store v1
 - [ ] Implement ability/class features.
