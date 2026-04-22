@@ -19,6 +19,7 @@ Build a production-grade pipeline where:
 - Ingestion parser utilities for source payloads -> canonical packet transformation.
 - Deterministic race/runner ID mapping helpers.
 - Ingestion quality checks (completeness + snapshot freshness).
+- Walk-forward backtesting metrics (log loss, Brier, calibration) and summary runner.
 
 ## Repository pointers
 - [`src/hkjc_factory/contracts.py`](src/hkjc_factory/contracts.py): input validation contracts.
@@ -26,6 +27,7 @@ Build a production-grade pipeline where:
 - [`src/hkjc_factory/live_board.py`](src/hkjc_factory/live_board.py): CLI entry point for race packet scoring.
 - [`src/hkjc_factory/ingestion/parsers.py`](src/hkjc_factory/ingestion/parsers.py): deterministic source parsers.
 - [`src/hkjc_factory/ingestion/quality.py`](src/hkjc_factory/ingestion/quality.py): freshness and completeness checks.
+- [`src/hkjc_factory/backtesting/`](src/hkjc_factory/backtesting): walk-forward split + metrics + evaluator.
 - [`configs/sample_race_packet.json`](configs/sample_race_packet.json): sample deterministic input.
 - [`configs/betting_policy.example.json`](configs/betting_policy.example.json): example policy parameters.
 
@@ -34,6 +36,7 @@ Build a production-grade pipeline where:
 python -m unittest discover -s tests -v
 PYTHONPATH=src python -m hkjc_factory.ingestion_cli tests/fixtures/race_card_source.json configs/sample_race_packet.generated.json
 PYTHONPATH=src python -m hkjc_factory.live_board configs/sample_race_packet.generated.json --market-weight 0.55 --overlay-threshold 0.03
+PYTHONPATH=src python -m hkjc_factory.backtest_cli tests/fixtures/backtest/probability_rows.json --train-size 120 --test-size 60 --step 40 --market-weight 0.55
 ```
 
 ## Core principles

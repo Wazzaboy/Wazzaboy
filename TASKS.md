@@ -27,8 +27,8 @@
 - [ ] Implement blend experiments.
 
 ## Milestone 4 — Backtest and decision policy
-- [ ] Build walk-forward backtest harness.
-- [ ] Report all mandatory metrics and segment breakdowns.
+- [x] Build walk-forward backtest harness.
+- [x] Report all mandatory metrics and segment breakdowns.
 - [ ] Implement overlay thresholding and pass rules.
 - [ ] Simulate stake sizing and risk controls.
 

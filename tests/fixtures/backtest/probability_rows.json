@@ -1,0 +1,1302 @@
+[
+  {
+    "won": 0,
+    "model_probability": 0.166486,
+    "market_probability": 0.167435
+  },
+  {
+    "won": 0,
+    "model_probability": 0.121711,
+    "market_probability": 0.099558
+  },
+  {
+    "won": 1,
+    "model_probability": 0.116106,
+    "market_probability": 0.09566
+  },
+  {
+    "won": 1,
+    "model_probability": 0.191276,
+    "market_probability": 0.197084
+  },
+  {
+    "won": 1,
+    "model_probability": 0.234231,
+    "market_probability": 0.19462
+  },
+  {
+    "won": 0,
+    "model_probability": 0.167921,
+    "market_probability": 0.140275
+  },
+  {
+    "won": 0,
+    "model_probability": 0.249619,
+    "market_probability": 0.235818
+  },
+  {
+    "won": 0,
+    "model_probability": 0.134085,
+    "market_probability": 0.092577
+  },
+  {
+    "won": 0,
+    "model_probability": 0.116016,
+    "market_probability": 0.118949
+  },
+  {
+    "won": 0,
+    "model_probability": 0.301198,
+    "market_probability": 0.300354
+  },
+  {
+    "won": 0,
+    "model_probability": 0.26485,
+    "market_probability": 0.252507
+  },
+  {
+    "won": 0,
+    "model_probability": 0.090529,
+    "market_probability": 0.096953
+  },
+  {
+    "won": 0,
+    "model_probability": 0.279364,
+    "market_probability": 0.263708
+  },
+  {
+    "won": 0,
+    "model_probability": 0.255293,
+    "market_probability": 0.238102
+  },
+  {
+    "won": 1,
+    "model_probability": 0.326422,
+    "market_probability": 0.294482
+  },
+  {
+    "won": 0,
+    "model_probability": 0.256606,
+    "market_probability": 0.235094
+  },
+  {
+    "won": 0,
+    "model_probability": 0.284226,
+    "market_probability": 0.27695
+  },
+  {
+    "won": 0,
+    "model_probability": 0.126965,
+    "market_probability": 0.111878
+  },
+  {
+    "won": 1,
+    "model_probability": 0.140374,
+    "market_probability": 0.121036
+  },
+  {
+    "won": 0,
+    "model_probability": 0.296293,
+    "market_probability": 0.260418
+  },
+  {
+    "won": 0,
+    "model_probability": 0.325204,
+    "market_probability": 0.316379
+  },
+  {
+    "won": 0,
+    "model_probability": 0.265274,
+    "market_probability": 0.24048
+  },
+  {
+    "won": 0,
+    "model_probability": 0.353472,
+    "market_probability": 0.306791
+  },
+  {
+    "won": 0,
+    "model_probability": 0.252961,
+    "market_probability": 0.259321
+  },
+  {
+    "won": 0,
+    "model_probability": 0.304311,
+    "market_probability": 0.254725
+  },
+  {
+    "won": 0,
+    "model_probability": 0.169988,
+    "market_probability": 0.156841
+  },
+  {
+    "won": 0,
+    "model_probability": 0.103794,
+    "market_probability": 0.086092
+  },
+  {
+    "won": 0,
+    "model_probability": 0.105153,
+    "market_probability": 0.111616
+  },
+  {
+    "won": 0,
+    "model_probability": 0.119779,
+    "market_probability": 0.114922
+  },
+  {
+    "won": 0,
+    "model_probability": 0.310119,
+    "market_probability": 0.315284
+  },
+  {
+    "won": 0,
+    "model_probability": 0.271352,
+    "market_probability": 0.228349
+  },
+  {
+    "won": 0,
+    "model_probability": 0.319981,
+    "market_probability": 0.313276
+  },
+  {
+    "won": 0,
+    "model_probability": 0.21992,
+    "market_probability": 0.176868
+  },
+  {
+    "won": 0,
+    "model_probability": 0.121322,
+    "market_probability": 0.120749
+  },
+  {
+    "won": 0,
+    "model_probability": 0.162099,
+    "market_probability": 0.143001
+  },
+  {
+    "won": 0,
+    "model_probability": 0.141187,
+    "market_probability": 0.150942
+  },
+  {
+    "won": 0,
+    "model_probability": 0.203679,
+    "market_probability": 0.179698
+  },
+  {
+    "won": 0,
+    "model_probability": 0.287363,
+    "market_probability": 0.266433
+  },
+  {
+    "won": 0,
+    "model_probability": 0.255814,
+    "market_probability": 0.262574
+  },
+  {
+    "won": 0,
+    "model_probability": 0.333063,
+    "market_probability": 0.290592
+  },
+  {
+    "won": 1,
+    "model_probability": 0.199881,
+    "market_probability": 0.185942
+  },
+  {
+    "won": 1,
+    "model_probability": 0.244993,
+    "market_probability": 0.251258
+  },
+  {
+    "won": 0,
+    "model_probability": 0.136104,
+    "market_probability": 0.136366
+  },
+  {
+    "won": 0,
+    "model_probability": 0.084209,
+    "market_probability": 0.094195
+  },
+  {
+    "won": 1,
+    "model_probability": 0.119212,
+    "market_probability": 0.107395
+  },
+  {
+    "won": 1,
+    "model_probability": 0.342914,
+    "market_probability": 0.31607
+  },
+  {
+    "won": 0,
+    "model_probability": 0.158953,
+    "market_probability": 0.14811
+  },
+  {
+    "won": 0,
+    "model_probability": 0.154104,
+    "market_probability": 0.113167
+  },
+  {
+    "won": 1,
+    "model_probability": 0.224847,
+    "market_probability": 0.205817
+  },
+  {
+    "won": 0,
+    "model_probability": 0.118149,
+    "market_probability": 0.107591
+  },
+  {
+    "won": 1,
+    "model_probability": 0.303477,
+    "market_probability": 0.303791
+  },
+  {
+    "won": 1,
+    "model_probability": 0.358462,
+    "market_probability": 0.336766
+  },
+  {
+    "won": 0,
+    "model_probability": 0.218279,
+    "market_probability": 0.226657
+  },
+  {
+    "won": 0,
+    "model_probability": 0.385995,
+    "market_probability": 0.344195
+  },
+  {
+    "won": 0,
+    "model_probability": 0.162503,
+    "market_probability": 0.150501
+  },
+  {
+    "won": 0,
+    "model_probability": 0.310379,
+    "market_probability": 0.288423
+  },
+  {
+    "won": 0,
+    "model_probability": 0.172392,
+    "market_probability": 0.16901
+  },
+  {
+    "won": 0,
+    "model_probability": 0.387088,
+    "market_probability": 0.34593
+  },
+  {
+    "won": 1,
+    "model_probability": 0.335342,
+    "market_probability": 0.30095
+  },
+  {
+    "won": 1,
+    "model_probability": 0.231096,
+    "market_probability": 0.219762
+  },
+  {
+    "won": 0,
+    "model_probability": 0.094308,
+    "market_probability": 0.087543
+  },
+  {
+    "won": 0,
+    "model_probability": 0.314372,
+    "market_probability": 0.266981
+  },
+  {
+    "won": 0,
+    "model_probability": 0.382278,
+    "market_probability": 0.332996
+  },
+  {
+    "won": 0,
+    "model_probability": 0.181679,
+    "market_probability": 0.178452
+  },
+  {
+    "won": 0,
+    "model_probability": 0.135373,
+    "market_probability": 0.133111
+  },
+  {
+    "won": 0,
+    "model_probability": 0.363509,
+    "market_probability": 0.323083
+  },
+  {
+    "won": 1,
+    "model_probability": 0.294283,
+    "market_probability": 0.256304
+  },
+  {
+    "won": 0,
+    "model_probability": 0.302945,
+    "market_probability": 0.258358
+  },
+  {
+    "won": 1,
+    "model_probability": 0.30122,
+    "market_probability": 0.282538
+  },
+  {
+    "won": 0,
+    "model_probability": 0.303018,
+    "market_probability": 0.293067
+  },
+  {
+    "won": 0,
+    "model_probability": 0.356098,
+    "market_probability": 0.342347
+  },
+  {
+    "won": 1,
+    "model_probability": 0.369123,
+    "market_probability": 0.335635
+  },
+  {
+    "won": 0,
+    "model_probability": 0.113369,
+    "market_probability": 0.1143
+  },
+  {
+    "won": 0,
+    "model_probability": 0.296526,
+    "market_probability": 0.297756
+  },
+  {
+    "won": 1,
+    "model_probability": 0.374119,
+    "market_probability": 0.344683
+  },
+  {
+    "won": 1,
+    "model_probability": 0.225997,
+    "market_probability": 0.228138
+  },
+  {
+    "won": 0,
+    "model_probability": 0.371121,
+    "market_probability": 0.34214
+  },
+  {
+    "won": 0,
+    "model_probability": 0.348107,
+    "market_probability": 0.332079
+  },
+  {
+    "won": 1,
+    "model_probability": 0.305724,
+    "market_probability": 0.303062
+  },
+  {
+    "won": 0,
+    "model_probability": 0.163533,
+    "market_probability": 0.159101
+  },
+  {
+    "won": 1,
+    "model_probability": 0.165169,
+    "market_probability": 0.150028
+  },
+  {
+    "won": 0,
+    "model_probability": 0.336932,
+    "market_probability": 0.325705
+  },
+  {
+    "won": 0,
+    "model_probability": 0.281762,
+    "market_probability": 0.237504
+  },
+  {
+    "won": 0,
+    "model_probability": 0.347884,
+    "market_probability": 0.327785
+  },
+  {
+    "won": 0,
+    "model_probability": 0.212469,
+    "market_probability": 0.221347
+  },
+  {
+    "won": 0,
+    "model_probability": 0.119675,
+    "market_probability": 0.129439
+  },
+  {
+    "won": 0,
+    "model_probability": 0.144943,
+    "market_probability": 0.126534
+  },
+  {
+    "won": 0,
+    "model_probability": 0.239807,
+    "market_probability": 0.230248
+  },
+  {
+    "won": 1,
+    "model_probability": 0.267026,
+    "market_probability": 0.229969
+  },
+  {
+    "won": 0,
+    "model_probability": 0.23619,
+    "market_probability": 0.23128
+  },
+  {
+    "won": 0,
+    "model_probability": 0.308973,
+    "market_probability": 0.28851
+  },
+  {
+    "won": 0,
+    "model_probability": 0.329947,
+    "market_probability": 0.285198
+  },
+  {
+    "won": 0,
+    "model_probability": 0.265716,
+    "market_probability": 0.245383
+  },
+  {
+    "won": 0,
+    "model_probability": 0.284178,
+    "market_probability": 0.267037
+  },
+  {
+    "won": 0,
+    "model_probability": 0.25556,
+    "market_probability": 0.20907
+  },
+  {
+    "won": 1,
+    "model_probability": 0.363195,
+    "market_probability": 0.316665
+  },
+  {
+    "won": 0,
+    "model_probability": 0.277665,
+    "market_probability": 0.231069
+  },
+  {
+    "won": 0,
+    "model_probability": 0.114324,
+    "market_probability": 0.117026
+  },
+  {
+    "won": 1,
+    "model_probability": 0.104026,
+    "market_probability": 0.099587
+  },
+  {
+    "won": 0,
+    "model_probability": 0.297794,
+    "market_probability": 0.260757
+  },
+  {
+    "won": 0,
+    "model_probability": 0.154668,
+    "market_probability": 0.121701
+  },
+  {
+    "won": 0,
+    "model_probability": 0.161574,
+    "market_probability": 0.118604
+  },
+  {
+    "won": 0,
+    "model_probability": 0.186439,
+    "market_probability": 0.139289
+  },
+  {
+    "won": 0,
+    "model_probability": 0.260953,
+    "market_probability": 0.21156
+  },
+  {
+    "won": 0,
+    "model_probability": 0.139487,
+    "market_probability": 0.123596
+  },
+  {
+    "won": 0,
+    "model_probability": 0.173306,
+    "market_probability": 0.171561
+  },
+  {
+    "won": 0,
+    "model_probability": 0.26615,
+    "market_probability": 0.274981
+  },
+  {
+    "won": 0,
+    "model_probability": 0.190009,
+    "market_probability": 0.198924
+  },
+  {
+    "won": 1,
+    "model_probability": 0.269196,
+    "market_probability": 0.24846
+  },
+  {
+    "won": 0,
+    "model_probability": 0.383274,
+    "market_probability": 0.345972
+  },
+  {
+    "won": 1,
+    "model_probability": 0.114224,
+    "market_probability": 0.10829
+  },
+  {
+    "won": 1,
+    "model_probability": 0.296556,
+    "market_probability": 0.290329
+  },
+  {
+    "won": 0,
+    "model_probability": 0.238693,
+    "market_probability": 0.194009
+  },
+  {
+    "won": 0,
+    "model_probability": 0.148787,
+    "market_probability": 0.149824
+  },
+  {
+    "won": 1,
+    "model_probability": 0.266086,
+    "market_probability": 0.234061
+  },
+  {
+    "won": 0,
+    "model_probability": 0.126824,
+    "market_probability": 0.095532
+  },
+  {
+    "won": 0,
+    "model_probability": 0.145853,
+    "market_probability": 0.099552
+  },
+  {
+    "won": 0,
+    "model_probability": 0.291464,
+    "market_probability": 0.29644
+  },
+  {
+    "won": 0,
+    "model_probability": 0.139755,
+    "market_probability": 0.097988
+  },
+  {
+    "won": 0,
+    "model_probability": 0.194755,
+    "market_probability": 0.171571
+  },
+  {
+    "won": 0,
+    "model_probability": 0.150076,
+    "market_probability": 0.152322
+  },
+  {
+    "won": 0,
+    "model_probability": 0.140945,
+    "market_probability": 0.144378
+  },
+  {
+    "won": 0,
+    "model_probability": 0.095709,
+    "market_probability": 0.093603
+  },
+  {
+    "won": 0,
+    "model_probability": 0.197921,
+    "market_probability": 0.162351
+  },
+  {
+    "won": 0,
+    "model_probability": 0.215698,
+    "market_probability": 0.215024
+  },
+  {
+    "won": 1,
+    "model_probability": 0.089931,
+    "market_probability": 0.084904
+  },
+  {
+    "won": 1,
+    "model_probability": 0.300995,
+    "market_probability": 0.277932
+  },
+  {
+    "won": 1,
+    "model_probability": 0.254264,
+    "market_probability": 0.208185
+  },
+  {
+    "won": 0,
+    "model_probability": 0.317039,
+    "market_probability": 0.301108
+  },
+  {
+    "won": 0,
+    "model_probability": 0.318931,
+    "market_probability": 0.305346
+  },
+  {
+    "won": 0,
+    "model_probability": 0.314637,
+    "market_probability": 0.26569
+  },
+  {
+    "won": 0,
+    "model_probability": 0.337121,
+    "market_probability": 0.304717
+  },
+  {
+    "won": 1,
+    "model_probability": 0.200122,
+    "market_probability": 0.189268
+  },
+  {
+    "won": 0,
+    "model_probability": 0.109294,
+    "market_probability": 0.115051
+  },
+  {
+    "won": 1,
+    "model_probability": 0.148805,
+    "market_probability": 0.14901
+  },
+  {
+    "won": 0,
+    "model_probability": 0.349375,
+    "market_probability": 0.307143
+  },
+  {
+    "won": 0,
+    "model_probability": 0.160655,
+    "market_probability": 0.156122
+  },
+  {
+    "won": 0,
+    "model_probability": 0.203504,
+    "market_probability": 0.204052
+  },
+  {
+    "won": 0,
+    "model_probability": 0.198783,
+    "market_probability": 0.151076
+  },
+  {
+    "won": 0,
+    "model_probability": 0.232377,
+    "market_probability": 0.22771
+  },
+  {
+    "won": 1,
+    "model_probability": 0.174973,
+    "market_probability": 0.163578
+  },
+  {
+    "won": 0,
+    "model_probability": 0.201518,
+    "market_probability": 0.183039
+  },
+  {
+    "won": 1,
+    "model_probability": 0.154549,
+    "market_probability": 0.134265
+  },
+  {
+    "won": 0,
+    "model_probability": 0.146711,
+    "market_probability": 0.151326
+  },
+  {
+    "won": 0,
+    "model_probability": 0.0826,
+    "market_probability": 0.09125
+  },
+  {
+    "won": 0,
+    "model_probability": 0.167994,
+    "market_probability": 0.142859
+  },
+  {
+    "won": 0,
+    "model_probability": 0.312099,
+    "market_probability": 0.282646
+  },
+  {
+    "won": 1,
+    "model_probability": 0.330725,
+    "market_probability": 0.317354
+  },
+  {
+    "won": 0,
+    "model_probability": 0.344845,
+    "market_probability": 0.345877
+  },
+  {
+    "won": 0,
+    "model_probability": 0.246297,
+    "market_probability": 0.253669
+  },
+  {
+    "won": 0,
+    "model_probability": 0.348464,
+    "market_probability": 0.320824
+  },
+  {
+    "won": 0,
+    "model_probability": 0.297658,
+    "market_probability": 0.299299
+  },
+  {
+    "won": 0,
+    "model_probability": 0.256276,
+    "market_probability": 0.21618
+  },
+  {
+    "won": 0,
+    "model_probability": 0.328174,
+    "market_probability": 0.30313
+  },
+  {
+    "won": 1,
+    "model_probability": 0.295981,
+    "market_probability": 0.264382
+  },
+  {
+    "won": 0,
+    "model_probability": 0.086399,
+    "market_probability": 0.088413
+  },
+  {
+    "won": 0,
+    "model_probability": 0.148477,
+    "market_probability": 0.108327
+  },
+  {
+    "won": 0,
+    "model_probability": 0.277071,
+    "market_probability": 0.249497
+  },
+  {
+    "won": 0,
+    "model_probability": 0.202308,
+    "market_probability": 0.212109
+  },
+  {
+    "won": 0,
+    "model_probability": 0.30221,
+    "market_probability": 0.282032
+  },
+  {
+    "won": 0,
+    "model_probability": 0.251974,
+    "market_probability": 0.258011
+  },
+  {
+    "won": 0,
+    "model_probability": 0.142559,
+    "market_probability": 0.148092
+  },
+  {
+    "won": 0,
+    "model_probability": 0.279234,
+    "market_probability": 0.27692
+  },
+  {
+    "won": 0,
+    "model_probability": 0.363085,
+    "market_probability": 0.343448
+  },
+  {
+    "won": 0,
+    "model_probability": 0.240355,
+    "market_probability": 0.209333
+  },
+  {
+    "won": 1,
+    "model_probability": 0.275149,
+    "market_probability": 0.246583
+  },
+  {
+    "won": 0,
+    "model_probability": 0.125041,
+    "market_probability": 0.119805
+  },
+  {
+    "won": 1,
+    "model_probability": 0.186258,
+    "market_probability": 0.162193
+  },
+  {
+    "won": 0,
+    "model_probability": 0.102505,
+    "market_probability": 0.096378
+  },
+  {
+    "won": 1,
+    "model_probability": 0.297432,
+    "market_probability": 0.26689
+  },
+  {
+    "won": 0,
+    "model_probability": 0.237344,
+    "market_probability": 0.219465
+  },
+  {
+    "won": 0,
+    "model_probability": 0.155616,
+    "market_probability": 0.111996
+  },
+  {
+    "won": 1,
+    "model_probability": 0.390269,
+    "market_probability": 0.344094
+  },
+  {
+    "won": 0,
+    "model_probability": 0.243116,
+    "market_probability": 0.203922
+  },
+  {
+    "won": 0,
+    "model_probability": 0.207471,
+    "market_probability": 0.201352
+  },
+  {
+    "won": 0,
+    "model_probability": 0.337951,
+    "market_probability": 0.335309
+  },
+  {
+    "won": 0,
+    "model_probability": 0.139714,
+    "market_probability": 0.11827
+  },
+  {
+    "won": 0,
+    "model_probability": 0.155016,
+    "market_probability": 0.115803
+  },
+  {
+    "won": 1,
+    "model_probability": 0.351653,
+    "market_probability": 0.319453
+  },
+  {
+    "won": 1,
+    "model_probability": 0.341549,
+    "market_probability": 0.322381
+  },
+  {
+    "won": 0,
+    "model_probability": 0.100471,
+    "market_probability": 0.080969
+  },
+  {
+    "won": 0,
+    "model_probability": 0.159969,
+    "market_probability": 0.161527
+  },
+  {
+    "won": 1,
+    "model_probability": 0.205755,
+    "market_probability": 0.165341
+  },
+  {
+    "won": 1,
+    "model_probability": 0.323045,
+    "market_probability": 0.282698
+  },
+  {
+    "won": 0,
+    "model_probability": 0.362909,
+    "market_probability": 0.330128
+  },
+  {
+    "won": 0,
+    "model_probability": 0.170588,
+    "market_probability": 0.158255
+  },
+  {
+    "won": 1,
+    "model_probability": 0.375025,
+    "market_probability": 0.349674
+  },
+  {
+    "won": 1,
+    "model_probability": 0.202084,
+    "market_probability": 0.195574
+  },
+  {
+    "won": 0,
+    "model_probability": 0.147542,
+    "market_probability": 0.107462
+  },
+  {
+    "won": 1,
+    "model_probability": 0.337569,
+    "market_probability": 0.332609
+  },
+  {
+    "won": 0,
+    "model_probability": 0.219351,
+    "market_probability": 0.21796
+  },
+  {
+    "won": 0,
+    "model_probability": 0.381221,
+    "market_probability": 0.338165
+  },
+  {
+    "won": 0,
+    "model_probability": 0.295147,
+    "market_probability": 0.250342
+  },
+  {
+    "won": 1,
+    "model_probability": 0.261466,
+    "market_probability": 0.228292
+  },
+  {
+    "won": 0,
+    "model_probability": 0.294787,
+    "market_probability": 0.277735
+  },
+  {
+    "won": 1,
+    "model_probability": 0.261185,
+    "market_probability": 0.254012
+  },
+  {
+    "won": 0,
+    "model_probability": 0.327868,
+    "market_probability": 0.33023
+  },
+  {
+    "won": 0,
+    "model_probability": 0.180655,
+    "market_probability": 0.172789
+  },
+  {
+    "won": 0,
+    "model_probability": 0.34921,
+    "market_probability": 0.3436
+  },
+  {
+    "won": 0,
+    "model_probability": 0.184665,
+    "market_probability": 0.161226
+  },
+  {
+    "won": 0,
+    "model_probability": 0.124879,
+    "market_probability": 0.12518
+  },
+  {
+    "won": 1,
+    "model_probability": 0.344434,
+    "market_probability": 0.324609
+  },
+  {
+    "won": 0,
+    "model_probability": 0.374479,
+    "market_probability": 0.32469
+  },
+  {
+    "won": 1,
+    "model_probability": 0.119235,
+    "market_probability": 0.117691
+  },
+  {
+    "won": 0,
+    "model_probability": 0.167794,
+    "market_probability": 0.172328
+  },
+  {
+    "won": 0,
+    "model_probability": 0.173934,
+    "market_probability": 0.149757
+  },
+  {
+    "won": 0,
+    "model_probability": 0.297174,
+    "market_probability": 0.282408
+  },
+  {
+    "won": 0,
+    "model_probability": 0.234137,
+    "market_probability": 0.221525
+  },
+  {
+    "won": 0,
+    "model_probability": 0.103407,
+    "market_probability": 0.096756
+  },
+  {
+    "won": 0,
+    "model_probability": 0.13419,
+    "market_probability": 0.113986
+  },
+  {
+    "won": 1,
+    "model_probability": 0.31593,
+    "market_probability": 0.312973
+  },
+  {
+    "won": 0,
+    "model_probability": 0.161068,
+    "market_probability": 0.147082
+  },
+  {
+    "won": 0,
+    "model_probability": 0.378486,
+    "market_probability": 0.337565
+  },
+  {
+    "won": 0,
+    "model_probability": 0.077823,
+    "market_probability": 0.085889
+  },
+  {
+    "won": 0,
+    "model_probability": 0.340234,
+    "market_probability": 0.321838
+  },
+  {
+    "won": 0,
+    "model_probability": 0.09354,
+    "market_probability": 0.080048
+  },
+  {
+    "won": 0,
+    "model_probability": 0.344237,
+    "market_probability": 0.302909
+  },
+  {
+    "won": 0,
+    "model_probability": 0.143628,
+    "market_probability": 0.147086
+  },
+  {
+    "won": 0,
+    "model_probability": 0.251963,
+    "market_probability": 0.221039
+  },
+  {
+    "won": 0,
+    "model_probability": 0.303709,
+    "market_probability": 0.274869
+  },
+  {
+    "won": 1,
+    "model_probability": 0.226568,
+    "market_probability": 0.203478
+  },
+  {
+    "won": 0,
+    "model_probability": 0.295175,
+    "market_probability": 0.291221
+  },
+  {
+    "won": 1,
+    "model_probability": 0.262513,
+    "market_probability": 0.254287
+  },
+  {
+    "won": 0,
+    "model_probability": 0.176162,
+    "market_probability": 0.147984
+  },
+  {
+    "won": 0,
+    "model_probability": 0.104497,
+    "market_probability": 0.110276
+  },
+  {
+    "won": 1,
+    "model_probability": 0.250665,
+    "market_probability": 0.237381
+  },
+  {
+    "won": 0,
+    "model_probability": 0.232914,
+    "market_probability": 0.242286
+  },
+  {
+    "won": 0,
+    "model_probability": 0.251923,
+    "market_probability": 0.204386
+  },
+  {
+    "won": 1,
+    "model_probability": 0.337137,
+    "market_probability": 0.318619
+  },
+  {
+    "won": 0,
+    "model_probability": 0.194343,
+    "market_probability": 0.146706
+  },
+  {
+    "won": 0,
+    "model_probability": 0.154305,
+    "market_probability": 0.162997
+  },
+  {
+    "won": 1,
+    "model_probability": 0.277306,
+    "market_probability": 0.262105
+  },
+  {
+    "won": 1,
+    "model_probability": 0.305696,
+    "market_probability": 0.260186
+  },
+  {
+    "won": 0,
+    "model_probability": 0.099489,
+    "market_probability": 0.089206
+  },
+  {
+    "won": 0,
+    "model_probability": 0.266178,
+    "market_probability": 0.264293
+  },
+  {
+    "won": 1,
+    "model_probability": 0.299858,
+    "market_probability": 0.279565
+  },
+  {
+    "won": 0,
+    "model_probability": 0.350565,
+    "market_probability": 0.341862
+  },
+  {
+    "won": 0,
+    "model_probability": 0.145605,
+    "market_probability": 0.142318
+  },
+  {
+    "won": 0,
+    "model_probability": 0.206747,
+    "market_probability": 0.159632
+  },
+  {
+    "won": 0,
+    "model_probability": 0.133974,
+    "market_probability": 0.130575
+  },
+  {
+    "won": 1,
+    "model_probability": 0.306555,
+    "market_probability": 0.259629
+  },
+  {
+    "won": 0,
+    "model_probability": 0.189011,
+    "market_probability": 0.186234
+  },
+  {
+    "won": 1,
+    "model_probability": 0.111426,
+    "market_probability": 0.118316
+  },
+  {
+    "won": 0,
+    "model_probability": 0.230087,
+    "market_probability": 0.186197
+  },
+  {
+    "won": 0,
+    "model_probability": 0.327687,
+    "market_probability": 0.277835
+  },
+  {
+    "won": 0,
+    "model_probability": 0.170026,
+    "market_probability": 0.168896
+  },
+  {
+    "won": 0,
+    "model_probability": 0.273417,
+    "market_probability": 0.281503
+  },
+  {
+    "won": 0,
+    "model_probability": 0.19466,
+    "market_probability": 0.182227
+  },
+  {
+    "won": 0,
+    "model_probability": 0.115873,
+    "market_probability": 0.1257
+  },
+  {
+    "won": 1,
+    "model_probability": 0.222227,
+    "market_probability": 0.174896
+  },
+  {
+    "won": 0,
+    "model_probability": 0.342797,
+    "market_probability": 0.340353
+  },
+  {
+    "won": 0,
+    "model_probability": 0.341145,
+    "market_probability": 0.301825
+  },
+  {
+    "won": 0,
+    "model_probability": 0.111707,
+    "market_probability": 0.093299
+  },
+  {
+    "won": 0,
+    "model_probability": 0.329848,
+    "market_probability": 0.328267
+  },
+  {
+    "won": 0,
+    "model_probability": 0.314005,
+    "market_probability": 0.322188
+  },
+  {
+    "won": 1,
+    "model_probability": 0.335193,
+    "market_probability": 0.299193
+  },
+  {
+    "won": 0,
+    "model_probability": 0.083165,
+    "market_probability": 0.089411
+  },
+  {
+    "won": 0,
+    "model_probability": 0.184232,
+    "market_probability": 0.149394
+  },
+  {
+    "won": 0,
+    "model_probability": 0.177888,
+    "market_probability": 0.171549
+  },
+  {
+    "won": 0,
+    "model_probability": 0.252315,
+    "market_probability": 0.246584
+  }
+]
