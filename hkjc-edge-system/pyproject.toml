@@ -5,10 +5,15 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "hkjc-edge-system"
 version = "0.1.0"
-description = "HKJC/HKHorseDB ingestion and modeling scaffold"
+description = "HKJC-first extraction and modeling foundation"
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+  "requests>=2.32",
+  "beautifulsoup4>=4.12",
+  "lxml>=5.2",
+  "pandas>=2.2",
+]
 
 [project.optional-dependencies]
 dev = [

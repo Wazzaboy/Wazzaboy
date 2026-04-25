@@ -7,7 +7,10 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable, Mapping
 
+from src.common.source_registry import DISCOVERY_REQUIRED_FIELDS
+
 REQUIRED_SCHEMAS: dict[str, list[str]] = {
+    "source_discovery": DISCOVERY_REQUIRED_FIELDS,
     "races": [
         "source_url",
         "source_name",

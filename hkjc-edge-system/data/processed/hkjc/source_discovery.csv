@@ -1,0 +1,5 @@
+source_url,source_name,source_page_type,access_status,model_value,leakage_risk,parser_difficulty,notes
+https://racing.hkjc.com/racing/information/English/racing/Racecard.aspx,HKJC,race_card,network_unavailable,high,low,medium,Primary pre-race runner and declaration data. [network_error=Tunnel connection failed: 403 Forbidden]
+https://racing.hkjc.com/racing/information/English/Racing/ResultsAll.aspx,HKJC,results,network_unavailable,high,post_race_only,medium,Official post-race result records. [network_error=Tunnel connection failed: 403 Forbidden]
+https://bet.hkjc.com/racing/pages/odds_wp.aspx,HKJC,current_odds,network_unavailable,high,time_sensitive,high,Public odds page; snapshot timestamp required. [network_error=Tunnel connection failed: 403 Forbidden]
+https://racing.hkjc.com/racing/information/English/racing/ResultsDividends.aspx,HKJC,dividends,network_unavailable,medium,post_race_only,medium,Official dividends; no same-race pre-race usage. [network_error=Tunnel connection failed: 403 Forbidden]

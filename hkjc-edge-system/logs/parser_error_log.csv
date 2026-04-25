@@ -1,1 +1,5 @@
 source_name,source_url,source_page_type,parser_module,error_type,error_message,failed_at,next_action
+HKJC,https://racing.hkjc.com/racing/information/English/racing/Racecard.aspx,race_card,hkjc.discovery,network_unavailable,Primary pre-race runner and declaration data. [network_error=Tunnel connection failed: 403 Forbidden],2026-04-25T18:13:53.737901+00:00,retry_later
+HKJC,https://racing.hkjc.com/racing/information/English/Racing/ResultsAll.aspx,results,hkjc.discovery,network_unavailable,Official post-race result records. [network_error=Tunnel connection failed: 403 Forbidden],2026-04-25T18:13:53.738059+00:00,retry_later
+HKJC,https://bet.hkjc.com/racing/pages/odds_wp.aspx,current_odds,hkjc.discovery,network_unavailable,Public odds page; snapshot timestamp required. [network_error=Tunnel connection failed: 403 Forbidden],2026-04-25T18:13:53.738138+00:00,retry_later
+HKJC,https://racing.hkjc.com/racing/information/English/racing/ResultsDividends.aspx,dividends,hkjc.discovery,network_unavailable,Official dividends; no same-race pre-race usage. [network_error=Tunnel connection failed: 403 Forbidden],2026-04-25T18:13:53.738209+00:00,retry_later
