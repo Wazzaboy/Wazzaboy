@@ -4,6 +4,14 @@ import math
 
 import pandas as pd
 
+MODEL_STATUS = "scaffold_only"
+COEFFICIENT_SOURCE = "placeholder_not_fitted"
+PLACEHOLDER_COEFFICIENTS = {
+    "draw_num": -0.03,
+    "handicap_rating_num": 0.04,
+    "carried_weight_num": -0.02,
+}
+
 
 def softmax(scores: list[float]) -> list[float]:
     if not scores:
@@ -17,10 +25,20 @@ def softmax(scores: list[float]) -> list[float]:
 
 
 def fundamental_score(draw_num: float, rating_num: float, carried_weight_num: float) -> float:
+    """Return a scaffold-only score from placeholder coefficients.
+
+    These coefficients are not fitted and must not be used as production betting
+    model coefficients. They exist only to keep the pipeline executable while the
+    verified historical dataset and fitted model are still under construction.
+    """
     draw = 0.0 if pd.isna(draw_num) else float(draw_num)
     rating = 0.0 if pd.isna(rating_num) else float(rating_num)
     weight = 0.0 if pd.isna(carried_weight_num) else float(carried_weight_num)
-    return (-0.03 * draw) + (0.04 * rating) - (0.02 * weight)
+    return (
+        PLACEHOLDER_COEFFICIENTS["draw_num"] * draw
+        + PLACEHOLDER_COEFFICIENTS["handicap_rating_num"] * rating
+        + PLACEHOLDER_COEFFICIENTS["carried_weight_num"] * weight
+    )
 
 
 def add_fundamental_probabilities(df: pd.DataFrame, race_id_col: str = "race_id") -> pd.DataFrame:
@@ -34,4 +52,6 @@ def add_fundamental_probabilities(df: pd.DataFrame, race_id_col: str = "race_id"
         probabilities.extend(softmax(race_df["fundamental_score"].tolist()))
 
     out["fundamental_prob"] = probabilities
+    out["fundamental_model_status"] = MODEL_STATUS
+    out["fundamental_coefficient_source"] = COEFFICIENT_SOURCE
     return out
