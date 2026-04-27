@@ -44,17 +44,17 @@ def required_registry_columns() -> list[str]:
 def default_hkjc_page_groups() -> list[SourceRegistryEntry]:
     return [
         SourceRegistryEntry(
-            source_url="https://racing.hkjc.com/racing/information/English/Racing/LocalResults.aspx",
+            source_url="https://racing.hkjc.com/en-us/local/information/localresults",
             source_name="HKJC",
             source_page_type="Results",
             access_status="unknown",
             model_value="high",
             leakage_risk="post_race_only",
             parser_difficulty="medium",
-            notes="Primary official results page group.",
+            notes="Primary official results page. Use racedate/Racecourse/RaceNo query params for specific races.",
         ),
         SourceRegistryEntry(
-            source_url="https://racing.hkjc.com/racing/information/English/racing/RaceCard.aspx",
+            source_url="https://racing.hkjc.com/en-us/local/information/racecard",
             source_name="HKJC",
             source_page_type="Race Card",
             access_status="unknown",
@@ -74,7 +74,7 @@ def default_hkjc_page_groups() -> list[SourceRegistryEntry]:
             notes="Public odds board; requires timestamped snapshots.",
         ),
         SourceRegistryEntry(
-            source_url="https://racing.hkjc.com/racing/information/English/Racing/DividendsAll.aspx",
+            source_url="https://racing.hkjc.com/en-us/local/information/dividend",
             source_name="HKJC",
             source_page_type="Dividends",
             access_status="unknown",
@@ -84,7 +84,7 @@ def default_hkjc_page_groups() -> list[SourceRegistryEntry]:
             notes="Dividend pools and pay-outs.",
         ),
         SourceRegistryEntry(
-            source_url="https://racing.hkjc.com/racing/information/English/Racing/Changes.aspx",
+            source_url="https://racing.hkjc.com/en-us/local/information/changes",
             source_name="HKJC",
             source_page_type="Changes",
             access_status="unknown",
@@ -94,7 +94,7 @@ def default_hkjc_page_groups() -> list[SourceRegistryEntry]:
             notes="Late gear/rider/runner changes.",
         ),
         SourceRegistryEntry(
-            source_url="https://racing.hkjc.com/racing/information/English/Horse/LatestVetRecords.aspx",
+            source_url="https://racing.hkjc.com/en-us/horse/vetRecords",
             source_name="HKJC",
             source_page_type="Veterinary Records",
             access_status="unknown",
@@ -104,7 +104,7 @@ def default_hkjc_page_groups() -> list[SourceRegistryEntry]:
             notes="Use historically for future races only.",
         ),
         SourceRegistryEntry(
-            source_url="https://racing.hkjc.com/racing/information/English/Racing/Trackwork.aspx",
+            source_url="https://racing.hkjc.com/en-us/local/information/trackwork",
             source_name="HKJC",
             source_page_type="Trackwork",
             access_status="unknown",
@@ -114,17 +114,17 @@ def default_hkjc_page_groups() -> list[SourceRegistryEntry]:
             notes="Public trackwork tables when published.",
         ),
         SourceRegistryEntry(
-            source_url="https://racing.hkjc.com/racing/information/English/Racing/ResultsAll.aspx",
+            source_url="https://racing.hkjc.com/en-us/local/information/racereportfull",
             source_name="HKJC",
             source_page_type="Race Report",
             access_status="unknown",
             model_value="medium",
             leakage_risk="post_race_only",
             parser_difficulty="medium",
-            notes="Post-race official reporting pages.",
+            notes="Post-race official reporting pages including incident and comments on running.",
         ),
         SourceRegistryEntry(
-            source_url="https://hkjc.com/english/",
+            source_url="https://racing.hkjc.com/en-us/racing/fixture",
             source_name="HKJC",
             source_page_type="Fixtures",
             access_status="unknown",

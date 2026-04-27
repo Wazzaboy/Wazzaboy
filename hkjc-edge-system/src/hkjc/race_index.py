@@ -150,6 +150,7 @@ def build_race_index(
     raw_root_dir: Path,
     logs_dir: Path,
     request_timeout_seconds: int = 20,
+    polite_delay_seconds: float = 0.5,
 ) -> RaceIndexBuildStats:
     today = datetime.now(UTC).date()
     effective_end = min(end_date, today)
@@ -213,7 +214,7 @@ def build_race_index(
             continue
 
         for race_url in race_urls:
-            fetched = fetch_results_page(source_url=race_url, raw_root_dir=raw_root_dir, timeout_seconds=request_timeout_seconds)
+            fetched = fetch_results_page(source_url=race_url, raw_root_dir=raw_root_dir, timeout_seconds=request_timeout_seconds, polite_delay_seconds=polite_delay_seconds)
             if fetched.status_code != 200 or not fetched.html.strip():
                 log_missing_data(
                     logs_dir,

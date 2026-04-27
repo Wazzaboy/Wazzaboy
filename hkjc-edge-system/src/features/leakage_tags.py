@@ -33,7 +33,7 @@ def classify_feature(feature_name: str) -> str:
     if name in _TARGET_FIELDS or name.startswith("target_"):
         return TARGET
 
-    if any(token in name for token in _POST_RACE_FIELDS):
+    if name in _POST_RACE_FIELDS:
         return POST_RACE_ONLY
 
     return PRE_RACE

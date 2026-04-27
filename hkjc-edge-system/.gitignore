@@ -1,0 +1,24 @@
+# Raw downloaded content — never commit HTML/JSON/PDF source files to git.
+# Run the extraction scripts to regenerate; store large archives in a separate data volume.
+data/raw/**
+!data/raw/**/.gitkeep
+
+# Python runtime
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+.eggs/
+
+# Test / coverage artefacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editor
+.vscode/
+.idea/
+*.swp

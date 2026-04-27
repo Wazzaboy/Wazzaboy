@@ -58,7 +58,15 @@ def main() -> int:
     if forbidden_columns:
         print(f"excluded_post_race_columns={forbidden_columns}")
 
-    model_df = df[["race_id", "runner_id", "race_date", "horse_name", "target_win", "market_odds", *model_feature_columns]].copy()
+    source_provenance_cols = [
+        col for col in [
+            "source_url_runner", "source_name_runner", "source_page_type_runner", "extraction_timestamp_runner",
+            "source_url_race", "source_name_race", "source_page_type_race", "extraction_timestamp_race",
+        ] if col in df.columns
+    ]
+
+    keep_cols = ["race_id", "runner_id", "race_date", "horse_name", "target_win", "market_odds", *model_feature_columns, *source_provenance_cols]
+    model_df = df[[c for c in keep_cols if c in df.columns]].copy()
 
     model_df = add_market_probabilities(model_df, odds_col="market_odds")
     model_df = add_fundamental_probabilities(model_df)
@@ -83,9 +91,13 @@ def main() -> int:
     probabilities_path = processed_dir / "model_probabilities.csv"
     model_df.to_csv(probabilities_path, index=False)
 
-    simulation_cols = ["race_id", "runner_id", "race_date", "horse_name", "expected_value_haircut", "fractional_kelly_25"]
+    simulation_cols = [
+        *[c for c in source_provenance_cols if "runner" in c],
+        "race_id", "runner_id", "race_date", "horse_name",
+        "expected_value_haircut", "fractional_kelly_25",
+    ]
     simulation_path = processed_dir / "betting_ev_simulation.csv"
-    model_df[simulation_cols].to_csv(simulation_path, index=False)
+    model_df[[c for c in simulation_cols if c in model_df.columns]].to_csv(simulation_path, index=False)
 
     print(f"calibration_slope={slope:.6f}")
     print(f"calibration_intercept={intercept:.6f}")

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+from datetime import UTC, datetime
 from pathlib import Path
 import sys
 
@@ -79,11 +80,12 @@ def main() -> int:
     val_df = add_calibrated_probabilities(val_df, slope=slope, intercept=intercept)
     test_df = add_calibrated_probabilities(test_df, slope=slope, intercept=intercept)
 
+    model_run_timestamp = datetime.now(UTC).isoformat()
     summary = pd.DataFrame(
         [
-            {"split": "train", "rows": len(train_df), "brier": _brier_score(train_df), "slope": slope, "intercept": intercept},
-            {"split": "validation", "rows": len(val_df), "brier": _brier_score(val_df), "slope": slope, "intercept": intercept},
-            {"split": "test", "rows": len(test_df), "brier": _brier_score(test_df), "slope": slope, "intercept": intercept},
+            {"model_run_timestamp": model_run_timestamp, "split": "train", "rows": len(train_df), "brier": _brier_score(train_df), "slope": slope, "intercept": intercept},
+            {"model_run_timestamp": model_run_timestamp, "split": "validation", "rows": len(val_df), "brier": _brier_score(val_df), "slope": slope, "intercept": intercept},
+            {"model_run_timestamp": model_run_timestamp, "split": "test", "rows": len(test_df), "brier": _brier_score(test_df), "slope": slope, "intercept": intercept},
         ]
     )
     output_path = processed_dir / "time_split_evaluation.csv"

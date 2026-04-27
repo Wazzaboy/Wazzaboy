@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+from datetime import UTC, datetime
 from pathlib import Path
 import sys
 
@@ -109,9 +110,14 @@ def main() -> int:
         prior_slope = slope
         prior_intercept = intercept
 
+    model_run_timestamp = datetime.now(UTC).isoformat()
+    for row in rows:
+        row["model_run_timestamp"] = model_run_timestamp
+
     out = pd.DataFrame(rows)
+    cols = ["model_run_timestamp"] + [c for c in out.columns if c != "model_run_timestamp"]
     output_path = processed_dir / "rolling_origin_backtest.csv"
-    out.to_csv(output_path, index=False)
+    out[cols].to_csv(output_path, index=False)
 
     print(f"rolling_origin_backtest_path={output_path}")
     print(f"windows={len(out)}")

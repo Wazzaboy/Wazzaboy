@@ -23,6 +23,13 @@ def _clean(value: str) -> str:
     return " ".join(value.replace("\xa0", " ").split())
 
 
+def _assert_date_format(race_date: str) -> None:
+    try:
+        datetime.strptime(race_date, "%Y-%m-%d")
+    except ValueError as exc:
+        raise ValueError(f"invalid race_date format in URL: {race_date!r}") from exc
+
+
 def _extract_race_context(source_url: str) -> tuple[str, str, str]:
     query = parse_qs(urlparse(source_url).query)
     race_date = query.get("racedate", [""])[0].replace("/", "-")
@@ -30,7 +37,7 @@ def _extract_race_context(source_url: str) -> tuple[str, str, str]:
     race_no = query.get("RaceNo", [""])[0]
 
     if race_date:
-        datetime.strptime(race_date, "%Y-%m-%d")
+        _assert_date_format(race_date)
 
     return race_date, racecourse, race_no
 
