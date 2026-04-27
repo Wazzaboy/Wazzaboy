@@ -1,0 +1,3 @@
+source_name,source_url,source_page_type,restriction_type,access_status,reason,next_action,logged_at
+HKHorseDB,https://www.hkhorsedb.com/cseh/index.php,Horse Database,membership_or_access,restricted,membership_or_login_detected,do_not_bypass,2026-04-27T08:22:47.887012+00:00
+HKHorseDB,https://www.hkhorsedb.com/cseh/user.php,Member Login,membership_or_access,restricted,membership_or_login_detected,do_not_bypass,2026-04-27T08:22:48.467403+00:00
