@@ -13,7 +13,7 @@ if str(REPO_ROOT) not in sys.path:
 
 from src.common.logging_utils import ensure_log_files
 from src.common.quarterly import dedupe_rows_by_key, iter_quarter_windows
-from src.hkjc.race_index import build_race_index
+from src.hkjc.race_index import RACE_INDEX_COLUMNS, build_race_index
 
 
 def _parse_date(raw: str) -> date:
@@ -25,14 +25,19 @@ def _load_csv_rows(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
-def _write_rows(path: Path, rows: list[dict[str, str]]) -> None:
+def _write_rows(path: Path, rows: list[dict[str, str]], fieldnames: list[str] | None = None) -> None:
+    """Write rows deterministically, including header-only files for zero-row batches.
+
+    This intentionally overwrites existing output even when no rows are present. A zero-row
+    extraction window must never leave stale rows from a prior run on disk.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
-    if not rows:
-        return
+    columns = fieldnames or (list(rows[0].keys()) if rows else RACE_INDEX_COLUMNS)
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()))
+        writer = csv.DictWriter(handle, fieldnames=columns)
         writer.writeheader()
-        writer.writerows(rows)
+        for row in rows:
+            writer.writerow({col: row.get(col, "") for col in columns})
 
 
 def main() -> int:
@@ -68,7 +73,7 @@ def main() -> int:
 
     deduped, duplicate_count = dedupe_rows_by_key(all_rows, "race_id")
     deduped.sort(key=lambda row: (row.get("race_date", ""), row.get("racecourse", ""), row.get("race_no", "")))
-    _write_rows(output_path, deduped)
+    _write_rows(output_path, deduped, RACE_INDEX_COLUMNS)
 
     print(f"output_path={output_path}")
     print(f"batches={len(windows)}")
