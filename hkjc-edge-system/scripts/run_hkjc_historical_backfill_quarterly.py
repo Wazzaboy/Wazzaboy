@@ -13,6 +13,8 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from src.common.quarterly import count_missing_required_fields, dedupe_rows_by_key, iter_quarter_windows
+from scripts.run_hkjc_results_extraction import RACES_COLUMNS, RUNNERS_COLUMNS, RESULTS_COLUMNS, DIVIDENDS_COLUMNS
+from scripts.run_hkjc_historical_backfill import COMMENTS_COLUMNS, INCIDENT_COLUMNS, RACE_CARD_COLUMNS, CHANGES_COLUMNS
 
 TABLES = [
     "races.csv",
@@ -24,6 +26,17 @@ TABLES = [
     "race_cards.csv",
     "changes.csv",
 ]
+
+TABLE_COLUMNS = {
+    "races.csv": RACES_COLUMNS,
+    "runners.csv": RUNNERS_COLUMNS,
+    "results.csv": RESULTS_COLUMNS,
+    "dividends.csv": DIVIDENDS_COLUMNS,
+    "comments.csv": COMMENTS_COLUMNS,
+    "incidents.csv": INCIDENT_COLUMNS,
+    "race_cards.csv": RACE_CARD_COLUMNS,
+    "changes.csv": CHANGES_COLUMNS,
+}
 
 
 def _parse_date(raw: str) -> date:
@@ -37,14 +50,19 @@ def _load_rows(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
-def _write_rows(path: Path, rows: list[dict[str, str]]) -> None:
+def _write_rows(path: Path, rows: list[dict[str, str]], fieldnames: list[str] | None = None) -> None:
+    """Write rows deterministically, including header-only zero-row outputs.
+
+    A quarterly run must describe the requested extraction window. Returning early on
+    empty rows can preserve stale CSVs from previous windows and corrupt joins.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
-    if not rows:
-        return
+    columns = fieldnames or (list(rows[0].keys()) if rows else [])
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()))
+        writer = csv.DictWriter(handle, fieldnames=columns)
         writer.writeheader()
-        writer.writerows(rows)
+        for row in rows:
+            writer.writerow({col: row.get(col, "") for col in columns})
 
 
 def _run_single_batch(start_date: str, end_date: str) -> None:
@@ -87,7 +105,11 @@ def main() -> int:
         for name in TABLES:
             current_rows = _load_rows(processed_dir / name)
             merged_tables[name].extend(current_rows)
-            _write_rows(quarterly_dir / f"batch_{idx:03d}_{window.start_date}_{window.end_date}_{name}", current_rows)
+            _write_rows(
+                quarterly_dir / f"batch_{idx:03d}_{window.start_date}_{window.end_date}_{name}",
+                current_rows,
+                TABLE_COLUMNS[name],
+            )
 
         deduped_races, dup_races = dedupe_rows_by_key(merged_tables["races.csv"], "race_id")
         deduped_runners, dup_runners = dedupe_rows_by_key(merged_tables["runners.csv"], "runner_id")
@@ -106,7 +128,7 @@ def main() -> int:
         key = "race_id" if name == "races.csv" else "runner_id" if name == "runners.csv" else ""
         if key:
             rows, _ = dedupe_rows_by_key(rows, key)
-        _write_rows(processed_dir / name, rows)
+        _write_rows(processed_dir / name, rows, TABLE_COLUMNS[name])
 
     deduped_races, dup_races = dedupe_rows_by_key(_load_rows(processed_dir / "races.csv"), "race_id")
     deduped_runners, dup_runners = dedupe_rows_by_key(_load_rows(processed_dir / "runners.csv"), "runner_id")
