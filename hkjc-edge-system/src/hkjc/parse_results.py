@@ -17,10 +17,18 @@ class ParsedResults:
     races: list[dict[str, str]]
     runners: list[dict[str, str]]
     results: list[dict[str, str]]
+    abnormal_results: list[dict[str, str]]
 
 
 def _clean(value: str) -> str:
     return " ".join(value.replace("\xa0", " ").split())
+
+
+def _assert_date_format(race_date: str) -> None:
+    try:
+        datetime.strptime(race_date, "%Y-%m-%d")
+    except ValueError as exc:
+        raise ValueError(f"invalid race_date format in URL: {race_date!r}") from exc
 
 
 def _extract_race_context(source_url: str) -> tuple[str, str, str]:
@@ -30,7 +38,7 @@ def _extract_race_context(source_url: str) -> tuple[str, str, str]:
     race_no = query.get("RaceNo", [""])[0]
 
     if race_date:
-        datetime.strptime(race_date, "%Y-%m-%d")
+        _assert_date_format(race_date)
 
     return race_date, racecourse, race_no
 
@@ -40,6 +48,38 @@ def _extract_horse_fields(horse_raw: str) -> tuple[str, str]:
     if not match:
         return horse_raw, ""
     return _clean(match.group(1)), _clean(match.group(2))
+
+
+def _abnormal_result_row(
+    *,
+    source_url: str,
+    extraction_timestamp: str,
+    race_id: str,
+    race_date: str,
+    racecourse: str,
+    race_no: str,
+    horse_no: str,
+    horse_name: str,
+    finish_position: str,
+    issue_type: str,
+    raw_value: str,
+) -> dict[str, str]:
+    return {
+        "source_url": source_url,
+        "source_name": "HKJC",
+        "source_page_type": "Results",
+        "extraction_timestamp": extraction_timestamp,
+        "race_id": race_id,
+        "race_date": race_date,
+        "racecourse": racecourse,
+        "race_no": race_no,
+        "horse_no": horse_no,
+        "horse_name": horse_name,
+        "finish_position": finish_position,
+        "issue_type": issue_type,
+        "parser_action": "excluded_from_normal_runner_and_result_tables",
+        "raw_value": raw_value,
+    }
 
 
 def parse_results_page(
@@ -99,6 +139,7 @@ def parse_results_page(
         "going": going,
         "prize_money": prize_money,
         "field_size": "",
+        "abnormal_result_count": "",
         "raw_class_distance": class_distance,
         "raw_race_header": race_header,
     }
@@ -109,6 +150,8 @@ def parse_results_page(
 
     runners: list[dict[str, str]] = []
     results: list[dict[str, str]] = []
+    abnormal_results: list[dict[str, str]] = []
+    seen_runner_ids: set[str] = set()
 
     for tr in rows[1:]:
         cells = [_clean(cell.get_text(" ", strip=True)) for cell in tr.select("td")]
@@ -117,7 +160,63 @@ def parse_results_page(
 
         horse_name, horse_id = _extract_horse_fields(cells[2])
         horse_no = cells[1]
-        runner_id = f"{race_id}-{horse_no}" if race_id and horse_no else ""
+        raw_value = "|".join(cells)
+
+        if not horse_no:
+            abnormal_results.append(
+                _abnormal_result_row(
+                    source_url=source_url,
+                    extraction_timestamp=extraction_timestamp,
+                    race_id=race_id,
+                    race_date=race_date,
+                    racecourse=racecourse,
+                    race_no=race_no,
+                    horse_no=horse_no,
+                    horse_name=horse_name,
+                    finish_position=cells[0],
+                    issue_type="blank_horse_no",
+                    raw_value=raw_value,
+                )
+            )
+            continue
+
+        runner_id = f"{race_id}-{horse_no}" if race_id else ""
+        if not runner_id:
+            abnormal_results.append(
+                _abnormal_result_row(
+                    source_url=source_url,
+                    extraction_timestamp=extraction_timestamp,
+                    race_id=race_id,
+                    race_date=race_date,
+                    racecourse=racecourse,
+                    race_no=race_no,
+                    horse_no=horse_no,
+                    horse_name=horse_name,
+                    finish_position=cells[0],
+                    issue_type="blank_runner_id",
+                    raw_value=raw_value,
+                )
+            )
+            continue
+
+        if runner_id in seen_runner_ids:
+            abnormal_results.append(
+                _abnormal_result_row(
+                    source_url=source_url,
+                    extraction_timestamp=extraction_timestamp,
+                    race_id=race_id,
+                    race_date=race_date,
+                    racecourse=racecourse,
+                    race_no=race_no,
+                    horse_no=horse_no,
+                    horse_name=horse_name,
+                    finish_position=cells[0],
+                    issue_type="duplicate_runner_id",
+                    raw_value=raw_value,
+                )
+            )
+            continue
+        seen_runner_ids.add(runner_id)
 
         runner_row = {
             "source_url": source_url,
@@ -170,10 +269,11 @@ def parse_results_page(
                 "finish_time": cells[10],
                 "running_position": cells[9],
                 "win_odds": cells[11],
-                "raw_value": "|".join(cells),
+                "raw_value": raw_value,
             }
         )
 
     race_row["field_size"] = str(len(runners))
+    race_row["abnormal_result_count"] = str(len(abnormal_results))
 
-    return ParsedResults(races=[race_row], runners=runners, results=results)
+    return ParsedResults(races=[race_row], runners=runners, results=results, abnormal_results=abnormal_results)

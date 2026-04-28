@@ -1,4 +1,4 @@
 source_url,source_name,source_page_type,access_status,model_value,leakage_risk,parser_difficulty,notes,extraction_timestamp
-https://www.hkhorsedb.com/,HKHorseDB,Landing,public,secondary,review_required,medium,public_page_detected,2026-04-27T08:22:46.625273+00:00
-https://www.hkhorsedb.com/cseh/index.php,HKHorseDB,Horse Database,restricted,secondary,review_required,medium,membership_or_login_detected,2026-04-27T08:22:46.625273+00:00
-https://www.hkhorsedb.com/cseh/user.php,HKHorseDB,Member Login,restricted,secondary,review_required,medium,membership_or_login_detected,2026-04-27T08:22:46.625273+00:00
+https://www.hkhorsedb.com/,HKHorseDB,Landing,restricted,secondary,review_required,medium,status_code=403,2026-04-28T16:33:57.544698+00:00
+https://www.hkhorsedb.com/cseh/index.php,HKHorseDB,Horse Database,restricted,secondary,review_required,medium,status_code=403,2026-04-28T16:33:57.544698+00:00
+https://www.hkhorsedb.com/cseh/user.php,HKHorseDB,Member Login,restricted,secondary,review_required,medium,status_code=403,2026-04-28T16:33:57.544698+00:00

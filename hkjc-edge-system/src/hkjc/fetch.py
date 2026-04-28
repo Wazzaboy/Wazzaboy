@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
+from time import sleep
 from urllib.parse import urljoin
 
 import requests
@@ -11,6 +12,7 @@ from bs4 import BeautifulSoup
 from src.common.raw_archive import RawArchiveRecord, archive_raw_content
 
 HKJC_RESULTS_BASE_URL = "https://racing.hkjc.com/en-us/local/information/localresults"
+_USER_AGENT = "hkjc-edge-system/0.1 (https://github.com/Wazzaboy/Wazzaboy; public-data-research)"
 
 
 @dataclass(frozen=True)
@@ -28,8 +30,15 @@ def discover_results_urls(
     limit: int = 1,
     timeout_seconds: int = 20,
 ) -> list[str]:
-    response = requests.get(base_url, timeout=timeout_seconds)
-    response.raise_for_status()
+    try:
+        response = requests.get(
+            base_url,
+            timeout=timeout_seconds,
+            headers={"User-Agent": _USER_AGENT},
+        )
+        response.raise_for_status()
+    except requests.RequestException:
+        return [base_url]
 
     soup = BeautifulSoup(response.text, "html.parser")
     urls: list[str] = []
@@ -53,12 +62,27 @@ def fetch_results_page(
     source_url: str,
     raw_root_dir: Path,
     timeout_seconds: int = 20,
+    polite_delay_seconds: float = 0.0,
 ) -> FetchResult:
-    response = requests.get(
-        source_url,
-        timeout=timeout_seconds,
-        headers={"User-Agent": "hkjc-edge-system/0.1 (+results-extraction)"},
-    )
+    if polite_delay_seconds > 0:
+        sleep(polite_delay_seconds)
+
+    try:
+        response = requests.get(
+            source_url,
+            timeout=timeout_seconds,
+            headers={"User-Agent": _USER_AGENT},
+        )
+    except requests.RequestException as exc:
+        timestamp = datetime.now(UTC).isoformat()
+        return FetchResult(
+            source_url=source_url,
+            status_code=0,
+            extraction_timestamp=timestamp,
+            html="",
+            archive_record=None,
+        )
+
     timestamp = datetime.now(UTC).isoformat()
 
     archive_record: RawArchiveRecord | None = None

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import calendar
 from dataclasses import dataclass
 from datetime import date
 from typing import Iterable
@@ -20,7 +21,7 @@ def iter_quarter_windows(start_date: date, end_date: date) -> list[QuarterWindow
     while cursor <= end_date:
         quarter = ((cursor.month - 1) // 3) + 1
         quarter_end_month = quarter * 3
-        quarter_end_day = 31 if quarter_end_month in {3, 12} else 30
+        quarter_end_day = calendar.monthrange(cursor.year, quarter_end_month)[1]
         quarter_end = date(cursor.year, quarter_end_month, quarter_end_day)
 
         window_end = quarter_end if quarter_end <= end_date else end_date

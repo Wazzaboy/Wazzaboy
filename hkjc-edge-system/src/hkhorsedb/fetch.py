@@ -19,10 +19,18 @@ class HKHorseDBFetchResult:
     html: str
 
 
+_MEMBERSHIP_TOKENS = frozenset(["登入", "會員", "login", "password", "member"])
+
+
+def _is_access_restricted(html: str) -> bool:
+    lower = html.lower()
+    return any(token in lower for token in _MEMBERSHIP_TOKENS)
+
+
 def fetch_hkhorsedb_page(*, source_url: str, source_page_type: str, raw_root_dir: Path) -> HKHorseDBFetchResult:
     timestamp = datetime.now(UTC).isoformat()
     try:
-        response = requests.get(source_url, timeout=20, headers={"User-Agent": "hkjc-edge-system/0.1 (+secondary-fetch)"})
+        response = requests.get(source_url, timeout=20, headers={"User-Agent": "hkjc-edge-system/0.1 (https://github.com/Wazzaboy/Wazzaboy; public-data-research)"})
     except requests.RequestException:
         return HKHorseDBFetchResult(
             source_url=source_url,
@@ -38,6 +46,9 @@ def fetch_hkhorsedb_page(*, source_url: str, source_page_type: str, raw_root_dir
         status = "restricted"
     elif response.status_code != 200:
         status = "error"
+    elif _is_access_restricted(response.text):
+        # Page returned 200 but contains login/membership content — do not archive
+        status = "restricted"
 
     if status == "public" and response.text:
         archive_raw_content(
@@ -54,5 +65,5 @@ def fetch_hkhorsedb_page(*, source_url: str, source_page_type: str, raw_root_dir
         status=status,
         status_code=response.status_code,
         extraction_timestamp=timestamp,
-        html=response.text,
+        html=response.text if status == "public" else "",
     )
