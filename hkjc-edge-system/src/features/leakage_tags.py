@@ -4,10 +4,17 @@ from dataclasses import dataclass
 from typing import Iterable
 
 PRE_RACE = "pre_race"
+LIVE_PRE_RACE = "live_pre_race"
+RESEARCH_ONLY = "research_only"
 POST_RACE_ONLY = "post_race_only"
 TARGET = "target"
 
 _TARGET_FIELDS = {"target_win", "target_place"}
+_RESEARCH_ONLY_FIELDS = {
+    "market_odds",
+    "market_implied_prob_raw",
+    "odds_quality_note",
+}
 _POST_RACE_FIELDS = {
     "finish_position",
     "beaten_margin",
@@ -35,6 +42,9 @@ def classify_feature(feature_name: str) -> str:
 
     if name in _POST_RACE_FIELDS:
         return POST_RACE_ONLY
+
+    if name in _RESEARCH_ONLY_FIELDS:
+        return RESEARCH_ONLY
 
     return PRE_RACE
 
