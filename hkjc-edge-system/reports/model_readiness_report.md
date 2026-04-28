@@ -1,6 +1,6 @@
 # Model Readiness Report
 
-Generated at: 2026-04-27T10:58:12.181301+00:00
+Generated at: 2026-04-28T16:33:56.678678+00:00
 
 ## Features available now
 - race_id
@@ -49,7 +49,7 @@ Generated at: 2026-04-27T10:58:12.181301+00:00
 - time_split_test_brier: 0.0631629285703012
 - rolling_windows: 3
 - rolling_avg_brier: 0.06432961990451477
-- rolling_avg_log_loss: 0.23247988910285391
+- rolling_avg_log_loss: 0.23247988910285397
 
 ## Readiness thresholds
 - min_split_rows: 200

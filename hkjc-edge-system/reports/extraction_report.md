@@ -76,3 +76,48 @@
 - modeling_ready: no
 - requested_range: 2020-01-01 to 2026-04-27
 - index_coverage_range: 2026-03-01 to 2026-03-29
+
+## Discovery Run (2026-04-28T16:34:03.721504+00:00)
+- validation_status: pass
+- validation_issues: 0
+- source_registry_sample:
+- HKJC | Results | restricted | https://racing.hkjc.com/en-us/local/information/localresults
+- HKJC | Race Card | restricted | https://racing.hkjc.com/en-us/local/information/racecard
+- HKJC | Current Odds | restricted | https://bet.hkjc.com/racing/pages/odds_wp.aspx
+- HKJC | Dividends | restricted | https://racing.hkjc.com/en-us/local/information/dividend
+- HKJC | Changes | restricted | https://racing.hkjc.com/en-us/local/information/changes
+
+## Validation Run (2026-04-28T16:36:14.876799+00:00)
+- status: pass
+- provenance_errors: 0
+- leakage_issues: 0
+- registry_validation: pass
+
+## Extraction Report (2026-04-28T16:36:15.018377+00:00)
+### Processed data row counts
+- races: 81
+- runners: 1007
+- results: 1007
+- dividends: 1348
+- comments: 1007
+- incidents: 81
+- race_cards: 81
+- changes: 81
+- race_index: 81
+- feature_store: 1007
+### Log row counts
+- missing_data: 1
+- parser_errors: 0
+- restricted_pages: 5
+- conflicts: 0
+
+## HKJC Results Extraction Run (2026-04-28T16:36:16.177597+00:00)
+- urls: 1
+- races_rows: 0
+- runners_rows: 0
+- results_rows: 0
+- dividends_rows: 0
+- validation_status: pass
+- validation_errors: 0
+- missing_data_log: none
+- parser_error_log: none
