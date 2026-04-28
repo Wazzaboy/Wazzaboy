@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          cd hkjc-edge-system
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      - name: Run tests
+        run: |
+          cd hkjc-edge-system
+          pytest -q
+      - name: Run validation
+        run: |
+          cd hkjc-edge-system
+          python scripts/run_validation.py
+      - name: Run model readiness report
+        run: |
+          cd hkjc-edge-system
+          python scripts/run_model_readiness_report.py
