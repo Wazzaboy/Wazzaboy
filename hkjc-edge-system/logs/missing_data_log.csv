@@ -1,2 +1,3 @@
 source_name,source_url,source_page_type,entity_type,entity_key,missing_field,reason,attempted_action,next_action,logged_at
 HKJC,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/03/29&Racecourse=S4&RaceNo=1,Results,race_page,https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/03/29&Racecourse=S4&RaceNo=1,race_metadata,parser_failed,build_race_index.parse_results_page,manual_layout_review,2026-04-27T07:12:58.115564+00:00
+HKJC,https://racing.hkjc.com/en-us/local/information/localresults,Results,race_page,https://racing.hkjc.com/en-us/local/information/localresults,page_html,status_code=403,fetch_results_page,retry_or_manual_review,2026-04-28T16:36:16.175667+00:00
