@@ -1,0 +1,4 @@
+factor_name,source_name,source_section,source_url,available,pre_race_usable,post_race_only,leakage_risk,model_value,extraction_priority
+horse_profile_enrichment,HKHorseDB,Landing,https://www.hkhorsedb.com/,false,false,false,review_required,secondary,low
+horse_profile_enrichment,HKHorseDB,Horse Database,https://www.hkhorsedb.com/cseh/index.php,false,false,false,review_required,secondary,low
+horse_profile_enrichment,HKHorseDB,Member Login,https://www.hkhorsedb.com/cseh/user.php,false,false,false,review_required,secondary,low

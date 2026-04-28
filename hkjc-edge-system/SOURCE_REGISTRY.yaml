@@ -1,0 +1,45 @@
+sources:
+  hkjc_race_card:
+    source_name: HKJC
+    source_page_type: RaceCard
+    authority: primary
+    timing_class: pre_race
+    raw_archive_required: true
+  hkjc_results:
+    source_name: HKJC
+    source_page_type: Results
+    authority: primary
+    timing_class: post_race_only
+    raw_archive_required: true
+  hkjc_current_odds:
+    source_name: HKJC
+    source_page_type: CurrentOdds
+    authority: primary
+    timing_class: live_pre_race
+    raw_archive_required: true
+    note: Requires timestamped public visible odds snapshots before decision time.
+  hkjc_dividends:
+    source_name: HKJC
+    source_page_type: Dividends
+    authority: primary
+    timing_class: post_race_only
+    raw_archive_required: true
+  hkjc_comments:
+    source_name: HKJC
+    source_page_type: CommentsOnRunning
+    authority: primary
+    timing_class: post_race_only
+    raw_archive_required: true
+  hkjc_incidents:
+    source_name: HKJC
+    source_page_type: Incidents
+    authority: primary
+    timing_class: post_race_only
+    raw_archive_required: true
+  hkhorsedb:
+    source_name: HKHorseDB
+    source_page_type: SecondaryDatabase
+    authority: secondary
+    timing_class: unknown
+    raw_archive_required: false
+    note: Secondary enrichment only; restricted pages must not be bypassed or archived.
