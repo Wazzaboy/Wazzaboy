@@ -1,0 +1,33 @@
+name: HKJC R6 Raw Evidence Capture
+on:
+  push:
+    branches: [chatgpt/hkjc-r6-capture-20260903]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    env:
+      HKJC_CONTACT_EMAIL: ${{ vars.HKJC_CONTACT_EMAIL }}
+      HKJC_COMPLIANCE_CONFIRMED_AT: ${{ vars.HKJC_COMPLIANCE_CONFIRMED_AT }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run fail-closed R6 acquisition
+        id: capture
+        continue-on-error: true
+        run: python r6/hkjc_r6_capture.py
+      - name: Upload immutable acquisition evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hkjc-r6-network-evidence
+          path: r6_evidence
+          if-no-files-found: error
+          retention-days: 30
+      - name: Enforce capture result
+        if: steps.capture.outcome != 'success'
+        run: exit 1
